@@ -10,8 +10,8 @@ const geocode = (address, callback) => {
     .then(({data}) => {
       const longitude =data.features[0].center[0]
       const latitude = data.features[0].center[1]
-      console.log("Longitute is " + longitude );
-      console.log("Latitude is " + latitude );
+      // console.log("Longitute is " + longitude );
+      // console.log("Latitude is " + latitude );
     })
     .catch((err) => {
       if (err.data) {

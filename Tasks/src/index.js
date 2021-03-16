@@ -17,15 +17,13 @@ const upload = multer({
             return callback(new Error('Please upload a doc'))
         }
         callback(undefined, true)
-        
-        // callback(new Error ('File must be a PDF'))
-        // callback(undefined, true)
-        // callback(undefined, false)
     }
 })
 
 app.post('/upload',upload.single('upload'), (req,res)=> {
     res.send()
+},  (error, req, res, next)=> {
+    res.status(400).send({ error: error.message })
 })
 
 app.use(express.json())
